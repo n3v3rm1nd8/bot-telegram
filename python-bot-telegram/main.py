@@ -13,9 +13,7 @@ async def scan(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         ip = context.args[0]  # El primer argumento después de /ip
         await update.message.reply_text(f"Escaneando...")
 
-        #ports = range(1, 65536)
-        ports = range(1, 100)
-        #cont = 0
+        ports = range(1, 65536)
         for port in ports:
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 sock.settimeout(0.1)
